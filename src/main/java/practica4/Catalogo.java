@@ -47,21 +47,26 @@ public class Catalogo {
      * @return
      */
     public String getPeliculas(){
+        if (peliculas.isEmpty()){
+            return "El catálogo está vacío";
+        }
         return peliculas.toString();
     }
 
     /**
      * Método buscar una película por título
+     * Utiliza un método equalsIgnoreCase() para que la comparación
+     * no se a sensible a las mayúsuclas y minúsculas
      * @param titulo
      * @return
      */
-    public Pelicula buscarPeliculaPorTitulo(String titulo){
+    public String buscarPeliculaPorTitulo(String titulo){
         for(Pelicula p: peliculas){
-            if (p.getTitulo().equals(titulo)){
-                return p;
+            if (p.getTitulo().equalsIgnoreCase(titulo)){
+                return p.getInformacion();
             }
         }
-        return null;
+        return "No se encontró la película con título: " + titulo;
     }
 
     /**
@@ -69,6 +74,6 @@ public class Catalogo {
      * @return
      */
     public String toString(){
-        return peliculas.toString();
+        return getPeliculas();
     }
 }
