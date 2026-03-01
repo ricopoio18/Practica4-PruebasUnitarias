@@ -55,14 +55,13 @@ public class Catalogo {
      * @param titulo
      * @return
      */
-    public String buscarPeliculaPorTitulo(String titulo){
-        String s = "";
+    public Pelicula buscarPeliculaPorTitulo(String titulo){
         for(Pelicula p: peliculas){
-            if (titulo == p.getTitulo()){
-                s = p.getInformacion();
+            if (p.getTitulo().equals(titulo)){
+                return p;
             }
         }
-        return s;
+        return null;
     }
 
     /**
