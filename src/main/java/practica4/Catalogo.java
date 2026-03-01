@@ -15,8 +15,6 @@ public class Catalogo {
      */
     public Catalogo() {
         peliculas = new ArrayList<>();
-        Pelicula pelicula = new Pelicula();
-        peliculas.add(pelicula);
     }
 
     /**
